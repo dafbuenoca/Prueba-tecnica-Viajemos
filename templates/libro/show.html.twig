@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Libro{% endblock %}
+
+{% block body %}
+    
+    <h1>Libro</h1>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>ISBN</th>
+                <td>{{ libro.id }}</td>
+            </tr>
+            <tr>
+                <th>Titulo</th>
+                <td>{{ libro.titulo }}</td>
+            </tr>
+            <tr>
+                <th>Sinopsis</th>
+                <td>{{ libro.sinopsis }}</td>
+            </tr>
+            <tr>
+                <th>Número de páginas</th>
+                <td>{{libro.getNPaginas()}}</td>
+            </tr>
+            <tr>
+                <th>Editorial</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Autores</th>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('libros') }}">Regresar</a>
+
+{% endblock %}

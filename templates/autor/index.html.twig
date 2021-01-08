@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Autores{% endblock %}
+
+{% block body %}
+    <h1>Indice de autores</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for autor in autores %}
+            <tr>
+                <td>{{ autor.id }}</td>
+                <td>{{ autor.nombre }}</td>
+                <td>{{ autor.apellidos }}</td>
+                <td>
+                    <a href="{{ path('autor_show', {'id': autor.id}) }}">Mostrar</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">No hay registros de autores</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <br>
+        <button type="button" class="btn btn-outline-success" ><a class="nav-link" href="{{ path('autor_new') }}">Nuevo autor <span class="sr-only">(current)</span></a></button>
+    <br>
+{% endblock %}
